@@ -14,7 +14,7 @@ SNP::read(string s)
     int ret = SNP::read_bed(s);
     return ret;
   } else if(ext == ".012") {
-    printf("+ .012 detected");
+    printf("+ .012 detected\n");
   } else {
     lerr("unrecognized file extension");
     return -1;
@@ -80,6 +80,8 @@ SNP::read(string s)
       fflush(stdout);
     }
   }
+  printf("\r%d locations read\n", loc);
+
   Env::plog("missing snps", missing);
 
   Env::plog("0s snps", a0);
@@ -239,6 +241,8 @@ SNP::read_bed(string s)
       fflush(stdout);
     }
   }
+  printf("\r%d locations read\n", loc);
+
 
   Env::plog("missing snps", missing);
 
