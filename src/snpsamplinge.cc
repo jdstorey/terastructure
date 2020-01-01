@@ -510,7 +510,7 @@ SNPSamplingE::compute_likelihood(bool first, bool validation)
   bool stop = false;
   int why = -1;
   if (_iter > 2000) {
-    if (a > _prev_h && 
+    if (a >= _prev_h && 
 	_prev_h != 0 && fabs((a - _prev_h) / _prev_h) < _env.stop_threshold) {
       stop = true;
       why = 0;
